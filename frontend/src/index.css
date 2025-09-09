@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Biglas";
+  src: url("/fonts/biglas.ttf") format("truetype"),
+       url("/fonts/biglas.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Groote";
+  src: url("/fonts/groote-regular.ttf") format("truetype"),
+       url("/fonts/groote-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Wiselly";
+  src: url("/fonts/wiselly-regular.ttf") format("truetype"),
+       url("/fonts/wiselly-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Raligo";
+  src: url("/fonts/Raligo DEMO.otf") format("opentype");
+}
+
+
+:root {
+    /* color variables */
+    --primary-color: #004743;
+    --secondary-color: #f0ede4;
+    --secondary-color-low-opacity: #f0ede4b4;
+    --primary-color-1: #2a323f;
+    --secondary-color-1: #feef4c;
+    --primary-color-2: #1a2517;
+    --secondary-color-2: #c0dfb5;
+    --accent-color: #5B43FF;
+
+    /* font variables */
+    /* --primary-font: "Raligo", sans-serif; */
+    --primary-font: "Groote", sans-serif;
+    /* --primary-font: "Wiselly", sans-serif; */
+    --secondary-font: "Biglas", sans-serif;
+
+
+
+    --font-h1: 90.44px;
+    --font-h2: 63.96px;
+    --font-h3: 45.23px;
+    --font-h4: 31.99px;
+    --font-h5: 22.62px;
+    --font-h6: 16px;
+    --font-para: 16px;
+
+    /* space variables */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+
+    /* other variables */
+
+}
