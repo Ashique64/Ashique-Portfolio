@@ -37,7 +37,7 @@
     /* color variables */
     --primary-color: #004743;
     --secondary-color: #f0ede4;
-    --secondary-color-low-opacity: #f0ede4b4;
+    --secondary-color-low-opacity: rgba(240, 237, 228, 0.15);
     --primary-color-1: #2a323f;
     --secondary-color-1: #feef4c;
     --primary-color-2: #1a2517;

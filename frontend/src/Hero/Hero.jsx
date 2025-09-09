@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="container text-center md:text-start px-8 md:px-12 overflow-hidden">
                 <h3 className="uppercase">I am Muhammed Ashique</h3>
                 <h1 className="my-4 uppercase inline-block font-bold">Full stack developer</h1>
-                <div className="items mt-4 md:mt-6 py-3 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4">
+                <div className="items mt-4 md:mt-6 py-6 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-start gap-4">
                     <div className="social-links flex justify-center md:justify-start">
                         <a
                             className="mx-1 md:mx-2 p-5 text-center rounded-full inline-flex items-center justify-center"
