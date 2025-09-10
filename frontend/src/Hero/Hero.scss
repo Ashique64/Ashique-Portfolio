@@ -8,11 +8,11 @@
             font-family: var(--secondary-font);
             letter-spacing: -0.003em;
 
-            &::after {
-                content: " |";
-                animation: blink 0.8s infinite;
-                color: var(--accent-color);
-            }
+            // &::after {
+            //     content: " |";
+            //     animation: blink 0.8s infinite;
+            //     color: var(--secondary-color);
+            // }
         }
 
         h1 {
@@ -147,7 +147,7 @@
 
 
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  50.1%, 100% { opacity: 0; }
-}
+// @keyframes blink {
+//   0%, 50% { opacity: 1; }
+//   50.1%, 100% { opacity: 0; }
+// }

@@ -42,12 +42,13 @@
     --secondary-color-1: #feef4c;
     --primary-color-2: #1a2517;
     --secondary-color-2: #c0dfb5;
-    /* --accent-color: #5B43FF; */
-    --accent-color: #FEFC00;
+    --accent-color: #05011d40;
+    --accent-color-2: #5B43FF;
+    /* --accent-color: #FEFC00; */
 
     /* font variables */
-    /* --primary-font: "Raligo", sans-serif; */
     --primary-font: "Groote", sans-serif;
+    /* --primary-font: "Raligo", sans-serif; */
     /* --primary-font: "Wiselly", sans-serif; */
     --secondary-font: "Biglas", sans-serif;
 

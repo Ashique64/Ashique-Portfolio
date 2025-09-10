@@ -109,7 +109,7 @@ const Hero = () => {
                     <div ref={socialLinksRef} className="social-links flex justify-center md:justify-start">
                         <a
                             className="mx-1 md:mx-2 p-5 text-center rounded-full inline-flex items-center justify-center"
-                            href="https://www.linkedin.com/in/muhammedashique/"
+                            href="https://www.linkedin.com/in/muhammed-ashique-k-p-9a03b0267/"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -118,7 +118,7 @@ const Hero = () => {
 
                         <a
                             className="mx-2 p-5 text-center rounded-full inline-flex items-center justify-center"
-                            href="https://github.com/muhammedashique"
+                            href="https://github.com/Ashique64"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
@@ -127,7 +127,7 @@ const Hero = () => {
 
                         <a
                             className="mx-2 p-5 text-center rounded-full inline-flex items-center justify-center"
-                            href="https://twitter.com/muhammedashique"
+                            href="https://wa.me/918606128064"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
