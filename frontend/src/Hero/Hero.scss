@@ -7,6 +7,12 @@
             font-size: var(--font-h3);
             font-family: var(--secondary-font);
             letter-spacing: -0.003em;
+
+            &::after {
+                content: " |";
+                animation: blink 0.8s infinite;
+                color: var(--accent-color);
+            }
         }
 
         h1 {
@@ -35,6 +41,7 @@
 
             .contact-btn {
                 background: var(--secondary-color-low-opacity);
+                // text-transform: uppercase;
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 border: 1px solid rgba(240, 237, 228, 0.3);
@@ -136,4 +143,11 @@
             }
         }
     }
+}
+
+
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.1%, 100% { opacity: 0; }
 }
