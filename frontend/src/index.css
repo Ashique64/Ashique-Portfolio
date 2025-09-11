@@ -9,29 +9,31 @@
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; 
+}
+
+
 @font-face {
-  font-family: "Biglas";
-  src: url("/fonts/biglas.ttf") format("truetype"),
-       url("/fonts/biglas.otf") format("opentype");
+    font-family: "Biglas";
+    src: url("/fonts/biglas.ttf") format("truetype"), url("/fonts/biglas.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Groote";
-  src: url("/fonts/groote-regular.ttf") format("truetype"),
-       url("/fonts/groote-regular.otf") format("opentype");
+    font-family: "Groote";
+    src: url("/fonts/groote-regular.ttf") format("truetype"), url("/fonts/groote-regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Wiselly";
-  src: url("/fonts/wiselly-regular.ttf") format("truetype"),
-       url("/fonts/wiselly-regular.otf") format("opentype");
+    font-family: "Wiselly";
+    src: url("/fonts/wiselly-regular.ttf") format("truetype"), url("/fonts/wiselly-regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "Raligo";
-  src: url("/fonts/Raligo DEMO.otf") format("opentype");
+    font-family: "Raligo";
+    src: url("/fonts/Raligo DEMO.otf") format("opentype");
 }
-
 
 :root {
     /* color variables */
@@ -43,7 +45,7 @@
     --primary-color-2: #1a2517;
     --secondary-color-2: #c0dfb5;
     --accent-color: #05011d40;
-    --accent-color-2: #5B43FF;
+    --accent-color-2: #5b43ff;
     /* --accent-color: #FEFC00; */
 
     /* font variables */
@@ -51,8 +53,6 @@
     /* --primary-font: "Raligo", sans-serif; */
     /* --primary-font: "Wiselly", sans-serif; */
     --secondary-font: "Biglas", sans-serif;
-
-
 
     --font-h1: 90.44px;
     --font-h2: 63.96px;
@@ -70,5 +70,4 @@
     --space-xl: 2rem;
 
     /* other variables */
-
 }

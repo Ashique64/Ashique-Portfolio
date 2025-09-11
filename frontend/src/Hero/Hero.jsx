@@ -4,9 +4,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
 import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hero.scss";
 
-gsap.registerPlugin(TextPlugin, SplitText);
+gsap.registerPlugin(TextPlugin, SplitText, ScrollTrigger);
 
 const Hero = () => {
     const heroRef = useRef();
@@ -88,6 +89,16 @@ const Hero = () => {
                         duration: 1.2,
                     }
                 );
+            ScrollTrigger.create({
+                trigger: heroRef.current,
+                start: "top top",
+                end: "bottom top",
+                pin: true,
+                pinSpacing: false,
+                scrub: 1,
+                anticipatePin: 1,
+                refreshPriority: -1,
+            });
         },
         { scope: heroRef }
     );
@@ -152,7 +163,10 @@ const Hero = () => {
                     </a>
                 </div>
             </div>
-            <div ref={scrollDownRef} className="scroll-down absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-[var(--secondary-color)]">
+            <div
+                ref={scrollDownRef}
+                className="scroll-down absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-[var(--secondary-color)]"
+            >
                 <FaChevronDown className="animate-bounce text-2xl" />
                 <span className="text-xs mt-1">Scroll</span>
             </div>
