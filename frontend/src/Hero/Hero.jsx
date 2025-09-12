@@ -99,6 +99,18 @@ const Hero = () => {
                 anticipatePin: 1,
                 refreshPriority: -1,
             });
+
+            gsap.to(heroRef.current.querySelector(".container"), {
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: "top top",
+                    end: "bottom top",
+                    scrub: true,
+                },
+                filter: "blur(5px)",
+                ease: "none",
+
+            });
         },
         { scope: heroRef }
     );
