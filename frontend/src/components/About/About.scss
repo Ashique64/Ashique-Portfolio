@@ -25,7 +25,13 @@
                     font-family: var(--secondary-font);
                     line-height: 1.8;
                     color: var(--accent-color);
-                    
+                }
+
+                .resume-btn {
+                    font-family: var(--secondary-font);
+                    font-size: var(--font-h6);
+                    border-radius: 8px;
+                    cursor: pointer;
                 }
             }
         }
@@ -77,4 +83,3 @@
         }
     }
 }
-
