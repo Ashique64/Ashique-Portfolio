@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useNavigate } from "react-router-dom";
 import "./Hero.scss";
 
 gsap.registerPlugin(TextPlugin, SplitText, ScrollTrigger);
@@ -17,78 +18,88 @@ const Hero = () => {
     const btnsRef = useRef();
     const scrollDownRef = useRef();
 
+    const navigate = useNavigate();
+
+    const handleScrollDownClick = () => {
+        navigate("#about");
+    };
+
     useGSAP(
         () => {
-            const tl = gsap.timeline();
+            document.fonts.ready.then(() => {
+                if (h1Ref.current) {
+                    const tl = gsap.timeline();
+                    const splitH1 = new SplitText(h1Ref.current, { type: "words,chars" });
 
-            const splitH1 = new SplitText(h1Ref.current, { type: "words,chars" });
-
-            tl.fromTo(
-                h4Ref.current,
-                { text: "" },
-                {
-                    duration: 1.5,
-                    text: "I am Muhammed Ashique",
-                    ease: "none",
+                    tl.fromTo(
+                        h4Ref.current,
+                        { text: "" },
+                        {
+                            duration: 1.5,
+                            text: "I am Muhammed Ashique",
+                            ease: "none",
+                        }
+                    )
+                        .from(
+                            splitH1.chars,
+                            {
+                                opacity: 0,
+                                y: 60,
+                                stagger: {
+                                    amount: 1.5,
+                                    from: "random",
+                                },
+                                ease: "back.out(1.7)",
+                                duration: 0.8,
+                            },
+                            "-=0.5"
+                        )
+                        .fromTo(
+                            socialLinksRef.current?.querySelectorAll("a"),
+                            {
+                                opacity: 0,
+                                x: 30,
+                            },
+                            {
+                                opacity: 1,
+                                scale: 1,
+                                x: 0,
+                                stagger: { amount: 0.15, from: "start" },
+                                ease: "back.out(1.7)",
+                                duration: 0.6,
+                            },
+                            "-=0.5"
+                        )
+                        .fromTo(
+                            btnsRef.current,
+                            {
+                                opacity: 0,
+                                y: 30,
+                            },
+                            {
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                                ease: "elastic.out(1, 0.5)",
+                                duration: 0.8,
+                            },
+                            "-=0.3"
+                        )
+                        .fromTo(
+                            scrollDownRef.current,
+                            { y: 0, opacity: 0 },
+                            {
+                                y: 15,
+                                opacity: 1,
+                                repeat: -1,
+                                yoyo: true,
+                                ease: "power1.inOut",
+                                duration: 1.2,
+                            }
+                        );
                 }
-            )
-                .from(
-                    splitH1.chars,
-                    {
-                        opacity: 0,
-                        y: 60,
-                        stagger: {
-                            amount: 1.5,
-                            from: "random",
-                        },
-                        ease: "back.out(1.7)",
-                        duration: 0.8,
-                    },
-                    "-=0.5"
-                )
-                .fromTo(
-                    socialLinksRef.current.querySelectorAll("a"),
-                    {
-                        opacity: 0,
-                        x: 30,
-                    },
-                    {
-                        opacity: 1,
-                        scale: 1,
-                        x: 0,
-                        stagger: { amount: 0.15, from: "start" },
-                        ease: "back.out(1.7)",
-                        duration: 0.6,
-                    },
-                    "-=0.5"
-                )
-                .fromTo(
-                    btnsRef.current,
-                    {
-                        opacity: 0,
-                        y: 30,
-                    },
-                    {
-                        opacity: 1,
-                        scale: 1,
-                        y: 0,
-                        ease: "elastic.out(1, 0.5)",
-                        duration: 0.8,
-                    },
-                    "-=0.3"
-                )
-                .fromTo(
-                    scrollDownRef.current,
-                    { y: 0, opacity: 0 },
-                    {
-                        y: 15,
-                        opacity: 1,
-                        repeat: -1,
-                        yoyo: true,
-                        ease: "power1.inOut",
-                        duration: 1.2,
-                    }
-                );
+            });
+
             ScrollTrigger.create({
                 trigger: heroRef.current,
                 start: "top top",
@@ -100,17 +111,19 @@ const Hero = () => {
                 refreshPriority: -1,
             });
 
-            gsap.to(heroRef.current.querySelector(".container"), {
-                scrollTrigger: {
-                    trigger: heroRef.current,
-                    start: "top top",
-                    end: "bottom top",
-                    scrub: true,
-                },
-                filter: "blur(5px)",
-                ease: "none",
-
-            });
+            const containerElement = heroRef.current?.querySelector(".container");
+            if (containerElement) {
+                gsap.to(containerElement, {
+                    scrollTrigger: {
+                        trigger: heroRef.current,
+                        start: "top top",
+                        end: "bottom top",
+                        scrub: true,
+                    },
+                    filter: "blur(5px)",
+                    ease: "none",
+                });
+            }
         },
         { scope: heroRef }
     );
@@ -179,7 +192,7 @@ const Hero = () => {
                 ref={scrollDownRef}
                 className="scroll-down absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-[var(--secondary-color)]"
             >
-                <FaChevronDown className="animate-bounce text-2xl" />
+                <FaChevronDown onClick={handleScrollDownClick} className="animate-bounce text-2xl" />
                 <span className="text-xs mt-1">Scroll</span>
             </div>
         </section>

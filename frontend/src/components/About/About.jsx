@@ -12,6 +12,7 @@ const About = () => {
     const contentRef = useRef();
 
     useGSAP(() => {
+      
         ScrollTrigger.create({
             trigger: aboutRef.current,
             start: "top top",
@@ -20,27 +21,35 @@ const About = () => {
             scrub: true,
         });
 
-        const paragraphs = contentRef.current.querySelectorAll("p");
-        paragraphs.forEach((p) => {
-            const split = new SplitText(p, { type: "chars" });
 
-            gsap.fromTo(
-                split.chars,
-                { color: "var(--accent-color)" },
-                {
-                    color: "var(--primary-color)",
-                    stagger: 0.08,
-                    ease: "none",
-                    scrollTrigger: {
-                        trigger: p,
-                        start: "bottom 60%",
-                        end: "bottom top",
-                        scrub: true,
-                    },
-                }
-            );
+        document.fonts.ready.then(() => {
+            if (contentRef.current) {
+                const paragraphs = contentRef.current.querySelectorAll("p");
+                paragraphs.forEach((p) => {
+                    if (p) {
+                        const split = new SplitText(p, { type: "words" });
+
+                        gsap.fromTo(
+                            split.words,
+                            { color: "var(--accent-color)" },
+                            {
+                                color: "var(--primary-color)",
+                                stagger: 0.08,
+                                ease: "none",
+                                scrollTrigger: {
+                                    trigger: p,
+                                    start: "bottom 60%",
+                                    end: "bottom top",
+                                    scrub: true,
+                                },
+                            }
+                        );
+                    }
+                });
+            }
         });
-    });
+    }, []);
+
     return (
         <div
             ref={aboutRef}
