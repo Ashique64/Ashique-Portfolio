@@ -21,7 +21,10 @@ const Hero = () => {
     const navigate = useNavigate();
 
     const handleScrollDownClick = () => {
-        navigate("#about");
+        const aboutSection = document.getElementById("about");
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     useGSAP(
