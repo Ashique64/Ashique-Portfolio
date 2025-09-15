@@ -90,6 +90,22 @@ const Backend = () => {
                     }
                 );
             }
+
+            // const containerElement = backendRef.current?.querySelector(".container");
+            // if (containerElement) {
+            //     gsap.to(containerElement, {
+            //         scrollTrigger: {
+            //             trigger: backendRef.current,
+            //             start: "bottom 60%",
+            //             end: "bottom top",
+            //             markers: true,
+            //             scrub: true,
+            //         },
+            //         filter: "blur(5px)",
+            //         scale: 0.5,
+            //         ease: "none",
+            //     });
+            // }
         });
     }, []);
 
