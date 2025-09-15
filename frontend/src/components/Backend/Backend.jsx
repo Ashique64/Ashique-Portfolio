@@ -3,88 +3,37 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
-import { FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaSass, FaBootstrap } from "react-icons/fa";
-import { SiRedux, SiTailwindcss } from "react-icons/si";
-import "./Frontend.scss";
+import { FaPython, FaDatabase } from "react-icons/fa";
+import { SiDjango, SiMysql, SiPostgresql, SiMongodb } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import "./Backend.scss";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const Frontend = () => {
-    const frontendRef = useRef();
+const Backend = () => {
+    const backendRef = useRef();
     const titleRef = useRef();
     const descriptionRef = useRef();
     const skillsRef = useRef();
 
-    const frontendSkills = [
-        {
-            name: "React.js",
-            icon: <FaReact />,
-            color: "#61DAFB",
-        },
-        {
-            name: "Bootstrap",
-            icon: <FaBootstrap />,
-            color: "#7952B3",
-        },
-        {
-            name: "HTML5",
-            icon: <FaHtml5 />,
-            color: "#E34F26",
-        },
-        {
-            name: "CSS3",
-            icon: <FaCss3Alt />,
-            color: "#1572B6",
-        },
-        {
-            name: "SCSS",
-            icon: <FaSass />,
-            color: "#CC6699",
-        },
-        {
-            name: "JavaScript",
-            icon: <FaJsSquare />,
-            color: "#F7DF1E",
-        },
-        {
-            name: "Redux",
-            icon: <SiRedux />,
-            color: "#764ABC",
-        },
-        {
-            name: "Tailwind",
-            icon: <SiTailwindcss />,
-            color: "#06B6D4",
-        },
+    const backendSkills = [
+        { name: "Python", icon: <FaPython />, color: "#3776AB" },
+        { name: "APIs", icon: <FaDatabase />, color: "#f59e0b" },
+        { name: "Django", icon: <SiDjango />, color: "#092E20" },
+        { name: "Django REST", icon: <SiDjango />, color: "#44B78B" },
+        { name: "MongoDB", icon: <SiMongodb />, color: "#4DB33D" },
+        { name: "MySQL", icon: <SiMysql />, color: "#00758F" },
+        { name: "PostgreSQL", icon: <SiPostgresql />, color: "#336791" },
+        { name: "AWS", icon: <FaAws />, color: "#FF9900" },
     ];
 
     useGSAP(() => {
-        let ctx = gsap.context(() => {
-            ScrollTrigger.matchMedia({
-                "(min-width: 768px)": function () {
-                    ScrollTrigger.create({
-                        trigger: frontendRef.current,
-                        start: "2% top",
-                        end: "bottom+=20% top",
-                        pin: true,
-                        scrub: true,
-                        pinSpacing: false,
-                    });
-                },
-            });
-        });
-
         document.fonts.ready.then(() => {
             if (titleRef.current) {
                 const titleSplit = new SplitText(titleRef.current, { type: "chars" });
-
                 gsap.fromTo(
                     titleSplit.chars,
-                    {
-                        opacity: 0,
-                        y: 100,
-                        rotationX: -90,
-                    },
+                    { opacity: 0, y: 100, rotationX: -90 },
                     {
                         opacity: 1,
                         y: 0,
@@ -103,13 +52,9 @@ const Frontend = () => {
 
             if (descriptionRef.current) {
                 const descSplit = new SplitText(descriptionRef.current, { type: "words" });
-
                 gsap.fromTo(
                     descSplit.words,
-                    {
-                        opacity: 0,
-                        y: 20,
-                    },
+                    { opacity: 0, y: 20 },
                     {
                         opacity: 1,
                         y: 0,
@@ -129,11 +74,7 @@ const Frontend = () => {
             if (skillCards) {
                 gsap.fromTo(
                     skillCards,
-                    {
-                        opacity: 0,
-                        y: 50,
-                        scale: 0.8,
-                    },
+                    { opacity: 0, y: 50, scale: 0.8 },
                     {
                         opacity: 1,
                         y: 0,
@@ -150,41 +91,33 @@ const Frontend = () => {
                 );
             }
         });
-        return () => ctx.revert();
     }, []);
 
     return (
         <div
-            ref={frontendRef}
-            className="frontend relative w-full flex items-center justify-center min-h-screen lg:max-h-[calc(100vh+50px)] py-20 md:py-12"
-            id="frontend"
+            ref={backendRef}
+            className="backend relative w-full flex items-center justify-center min-h-screen lg:max-h-screen py-20 md:py-12"
+            id="backend"
         >
             <div className="container px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden">
-                <h2 ref={titleRef} className="title mb-6 md:mb-5 text-center py-2">
-                    Frontend
+                <h2 ref={titleRef} className="title  mb-6 md:mb-5 text-center py-2">
+                    Backend
                 </h2>
-
                 <div className="description-section max-w-4xl mx-auto mb-12 md:mb-16 text-center">
                     <p ref={descriptionRef} className="description leading-relaxed opacity-90">
-                        I specialize in creating responsive, user-friendly interfaces that deliver seamless digital
-                        experiences. With expertise in modern JavaScript frameworks and styling technologies, I build
-                        interactive web applications that are both visually appealing and highly functional across all
-                        devices.
+                        I develop secure, scalable backends using Python, Django, and REST APIs, integrating SQL/NoSQL
+                        databases and cloud services like AWS to deliver reliable applications.
                     </p>
                 </div>
-
                 <div
                     ref={skillsRef}
                     className="skills-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 w-3/4 md:w-full max-w-3xl justify-items-center"
                 >
-                    {frontendSkills.map((skill, index) => (
+                    {backendSkills.map((skill, index) => (
                         <div
                             key={index}
                             className="skill-card group relative px-2 py-3 rounded-2xl backdrop-blur-sm border-2 border-opacity-20 hover:border-opacity-40 transition-all duration-300 flex flex-col items-center justify-center text-center"
-                            style={{
-                                background: "rgba(255, 255, 255, 0.05)",
-                                borderColor: skill.color,
-                            }}
+                            style={{ background: "rgba(255, 255, 255, 0.05)", borderColor: skill.color }}
                         >
                             <div
                                 className="skill-icon text-2xl md:text-3xl mb-4 mx-auto transition-all duration-300 group-hover:scale-110"
@@ -192,9 +125,7 @@ const Frontend = () => {
                             >
                                 {skill.icon}
                             </div>
-
                             <h3 className="skill-name mb-1">{skill.name}</h3>
-
                             <div
                                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300"
                                 style={{ backgroundColor: skill.color }}
@@ -207,4 +138,4 @@ const Frontend = () => {
     );
 };
 
-export default Frontend;
+export default Backend;

@@ -69,7 +69,7 @@ const About = () => {
     return (
         <div
             ref={aboutRef}
-            className="about relative w-full flex items-center justify-center min-h-screen py-0 md:py-12"
+            className="about relative w-full flex items-center justify-center min-h-screen lg:max-h-screen py-0 md:py-12"
             id="about"
         >
             <div className="container px-6 md:px-12 flex items-center justify-center overflow-hidden">

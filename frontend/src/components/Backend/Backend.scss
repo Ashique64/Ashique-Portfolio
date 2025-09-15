@@ -1,0 +1,53 @@
+#backend {
+    background: var(--secondary-color); 
+    color: var(--primary-color);
+    border-radius: 18px 18px 0 0;
+
+
+    .container {
+        .title {
+            font-family: var(--primary-font);
+            font-size: var(--font-h2);
+        }
+
+        .description-section {
+            p {
+                font-family: var(--secondary-font);
+                font-size: var(--font-h6);
+                letter-spacing: 0.05em;
+                line-height: 1.8;
+            }
+        }
+
+        .skills-grid {
+            .skill-card {
+                width: 130px;
+
+                .skill-name {
+                    font-family: var(--secondary-font);
+                    font-size: var(--font-h6);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #backend {
+        .container {
+            .title {
+                font-size: var(--font-h3);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    #backend {
+        .container {
+            .title {
+                font-size: var(--font-h4);
+            }
+        }
+    }
+}
