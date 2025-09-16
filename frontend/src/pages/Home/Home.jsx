@@ -4,6 +4,7 @@ import About from "../../components/About/About";
 import Frontend from "../../components/Frontend/Frontend";
 import Backend from "../../components/Backend/Backend";
 import ParallaxSpacer from "../../components/ParallaxSpacer/ParallaxSpacer";
+import Projects from "../../components/Projects/Projects";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Frontend />
             <ParallaxSpacer />
             <Backend />
+            <Projects />
         </>
     );
 };

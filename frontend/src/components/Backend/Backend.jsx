@@ -91,28 +91,27 @@ const Backend = () => {
                 );
             }
 
-            // const containerElement = backendRef.current?.querySelector(".container");
-            // if (containerElement) {
-            //     gsap.to(containerElement, {
-            //         scrollTrigger: {
-            //             trigger: backendRef.current,
-            //             start: "bottom 60%",
-            //             end: "bottom top",
-            //             markers: true,
-            //             scrub: true,
-            //         },
-            //         filter: "blur(5px)",
-            //         scale: 0.5,
-            //         ease: "none",
-            //     });
-            // }
+            const containerElement = backendRef.current?.querySelector(".container");
+            if (containerElement) {
+                gsap.to(containerElement, {
+                    scrollTrigger: {
+                        trigger: backendRef.current,
+                        start: "bottom 60%",
+                        end: "bottom top",
+                        scrub: true,
+                    },
+                    filter: "blur(5px)",
+                    scale: 0.5,
+                    ease: "none",
+                });
+            }
         });
     }, []);
 
     return (
         <div
             ref={backendRef}
-            className="backend relative w-full flex items-center justify-center min-h-screen lg:max-h-screen py-20 md:py-12"
+            className="backend relative w-full flex items-center justify-center min-h-screen lg:min-h-[calc(100vh+150px)] py-20 md:py-12"
             id="backend"
         >
             <div className="container px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden">
