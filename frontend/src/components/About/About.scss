@@ -61,7 +61,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     #about {
         .container {
             .about-row {
@@ -77,6 +77,7 @@
                     }
                     p {
                         font-size: var(--font-h6);
+                        color: var(--primary-color) !important;
                     }
                 }
             }
