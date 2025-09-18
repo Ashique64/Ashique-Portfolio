@@ -7,6 +7,7 @@ const Backend = lazy(() => import("../../components/Backend/Backend"));
 const ParallaxSpacer = lazy(() => import("../../components/ParallaxSpacer/ParallaxSpacer"));
 const Projects = lazy(() => import("../../components/Projects/Projects"));
 const Contact = lazy(() => import("../../components/Contact/Contact"));
+const Footer = lazy(() => import("../../components/Footer/Footer"));
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <Backend />
             <Projects />
             <Contact />
+            <Footer />
         </Suspense>
     );
 };

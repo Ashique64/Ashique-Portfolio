@@ -120,9 +120,9 @@ const Contact = () => {
         <div
             id="contact"
             ref={contactRef}
-            className="contact relative w-full flex items-start justify-center py-20 md:py-12"
+            className="contact relative w-full flex items-start justify-center py-14 md:py-12"
         >
-            <div className="container px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden">
+            <div className="container px-6 md:px-12 py-7 md:py-14 flex flex-col items-center justify-center overflow-hidden">
                 <div className="title mb-8">
                     <h2 ref={titleRef} className="font-bold text-3xl md:text-4xl">
                         Contact
