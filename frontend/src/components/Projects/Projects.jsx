@@ -12,8 +12,8 @@ const projectsData = [
     { id: 2, name: "Hotel Varahi Grand", image: "/images/project-1.png", link: "https://hotelvarahigrand.com/" },
     { id: 3, name: "MindZen Techno", image: "/images/project-3.png", link: "https://www.mindzentechno.com/" },
     { id: 4, name: "Kalabam", image: "/images/project-4.png", link: "https://kalabam.vercel.app/" },
-    { id: 4, name: "Netflix", image: "/images/project-5.png", link: "https://netflix-react-js-ten.vercel.app/" },
-    { id: 4, name: "Laundry", image: "/images/project-6.png", link: "https://laundry-orcin-one.vercel.app/" },
+    { id: 5, name: "Netflix", image: "/images/project-5.png", link: "https://netflix-react-js-ten.vercel.app/" },
+    { id: 6, name: "Laundry", image: "/images/project-6.png", link: "https://laundry-orcin-one.vercel.app/" },
 ];
 
 const Projects = () => {
