@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import Preloader from "../../components/Preloader/Preloader";
 
 const Hero = lazy(() => import("../../Hero/Hero"));
 const About = lazy(() => import("../../components/About/About"));
@@ -11,7 +12,7 @@ const Footer = lazy(() => import("../../components/Footer/Footer"));
 
 const Home = () => {
     return (
-        <Suspense fallback={<div>Loading section...</div>}>
+        <Suspense fallback={<Preloader />}>
             <Hero />
             <About />
             <Frontend />
