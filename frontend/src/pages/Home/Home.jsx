@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import Preloader from "../../components/Preloader/Preloader";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Hero = lazy(() => import("../../Hero/Hero"));
 const About = lazy(() => import("../../components/About/About"));
@@ -12,16 +13,21 @@ const Footer = lazy(() => import("../../components/Footer/Footer"));
 
 const Home = () => {
     return (
-        <Suspense fallback={<Preloader />}>
-            <Hero />
-            <About />
-            <Frontend />
-            <ParallaxSpacer />
-            <Backend />
-            <Projects />
-            <Contact />
-            <Footer />
-        </Suspense>
+        <>
+            <Navbar />
+            <Suspense fallback={<Preloader />}>
+                <main className="pt-16">
+                    <Hero />
+                    <About />
+                    <Frontend />
+                    <ParallaxSpacer />
+                    <Backend />
+                    <Projects />
+                    <Contact />
+                    <Footer />
+                </main>
+            </Suspense>
+        </>
     );
 };
 

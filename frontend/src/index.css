@@ -10,6 +10,7 @@
 }
 
 html {
+    background-color: #004743;
     scroll-behavior: smooth;
     overflow-x: hidden; 
 }
